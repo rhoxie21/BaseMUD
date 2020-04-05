@@ -449,7 +449,7 @@ DEFINE_DO_FUN (do_value) {
 DEFINE_DO_FUN (do_heal) {
     CHAR_T *mob;
     char arg[MAX_INPUT_LENGTH];
-    int cost, sn;
+    int cost, sn, i;
     SPELL_FUN *spell;
 
     /* check for healer */
@@ -476,6 +476,10 @@ DEFINE_DO_FUN (do_heal) {
             "   mana:    restore mana         10 gold\n\r"
             "Type heal <type> to be healed.\n\r", ch);
         return;
+    }
+
+    for (i = 0; i < HEALER_MAX && healer_table[i].name != NULL; i++) {
+
     }
 
     if (!str_prefix (arg, "light")) {

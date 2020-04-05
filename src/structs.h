@@ -1236,4 +1236,13 @@ struct cond_type {
     char *msg_better, *msg_worse;
 };
 
+/* Healer NPCs spells and cost. */
+struct healer_type {
+    int type;
+    char *name;
+    SPELL_FUN *spell;
+    SKILL_T *skill;
+    int cost;
+};
+
 #endif

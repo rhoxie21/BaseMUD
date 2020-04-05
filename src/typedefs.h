@@ -125,6 +125,7 @@ typedef struct song_type        SONG_T;
 typedef struct ext_flags_type   EXT_FLAGS_T;
 typedef struct ext_init_flags_type EXT_INIT_FLAGS_T;
 typedef struct cond_type        COND_T;
+typedef struct healer_type      HEALER_T;
 
 /* JSON typedefs. */
 typedef struct json_t JSON_T;

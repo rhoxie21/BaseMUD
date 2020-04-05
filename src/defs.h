@@ -362,6 +362,18 @@
 #define COND_HUNGER   3
 #define COND_MAX      4
 
+/* Healer NPCs spells and cost. */
+#define HEALER_LIGHT        0
+#define HEALER_SERIOUS      1
+#define HEALER_CRITICAL     2
+#define HEALER_HEAL         3
+#define HEALER_BLINDNESS    4
+#define HEALER_DISEASE      5
+#define HEALER_POISON       6
+#define HEALER_UNCURSE      7
+#define HEALER_REFRESH      8
+#define HEALER_MANA         9
+
 /* Types of attacks.
  * Must be non-overlapping with spell/skill types,
  * but may be arbitrary beyond that. */
@@ -467,6 +479,7 @@
 #define COND_HOURS_STUFFED  40
 #define COND_HOURS_MAX      48
 #define AC_MAX              4
+#define HEALER_MAX          10
 
 /* Colour setting codes */
 #define COLOUR_TEXT            0

@@ -129,6 +129,7 @@ const TABLE_T master_table[TABLE_MAX + 1] = {
     TTABLE (day_table,        "days",         "Days of the week.",            "day",           "config_unsupported", json_tblw_day,            NULL, NULL),
     TTABLE (dex_app_table,    "dex_app",      "Dex apply table.",             "dex_app",       "config_unsupported", json_tblw_dex_app,        NULL, NULL),
     TTABLE (door_table,       "doors",        "Exit names.",                  "door",          "config_unsupported", json_tblw_door,           NULL, NULL),
+    TTABLE (healer_table,     "healers",      "NPC healer spells and costs.", "npcs",          "config_unsupported", json_tblw_npcs,           NULL, NULL),
     TTABLE (hp_cond_table,    "hp_conds",     "Messages based on % of hp.",   "hp_cond",       "config_unsupported", json_tblw_hp_cond,        NULL, NULL),
     TTABLE (int_app_table,    "int_app",      "Int apply table.",             "int_app",       "config_unsupported", json_tblw_int_app,        NULL, NULL),
     TTABLE (item_table,       "items",        "Item types and properties.",   "item",          "config_unsupported", json_tblw_item,           NULL, NULL),
@@ -1841,5 +1842,21 @@ const COND_T cond_table[COND_MAX + 1] = {
     {COND_FULL,   "full",   NULL,             char_is_full,    NULL,                           "You are full.\n\r",    NULL,                             NULL },
     {COND_THIRST, "thirst", char_is_quenched, char_is_thirsty, "Your thirst is quenched.\n\r", "You are thirsty.\n\r", "You are no longer thirsty.\n\r", NULL },
     {COND_HUNGER, "hunger", char_is_fed,      char_is_hungry,  "You feel well-fed.\n\r",       "You are hungry.\n\r",  "You are no longer hungry.\n\r",  NULL },
+    {0}
+};
+
+/* Healer NPCs spells and cost. */
+const HEALER_T healer_table[HEALER_MAX + 1] = {
+    {HEALER_LIGHT,      "light",       spell_cure_light,        "cure light",        1000},
+    {HEALER_SERIOUS,    "serious",     spell_cure_serious,      "cure serious",      1500},
+    {HEALER_CRITICAL,   "critical",    spell_cure_critical,     "cure critical",     2500},
+    {HEALER_HEAL,       "heal",        spell_heal,              "heal",              5000},
+    {HEALER_BLINDNESS,  "blindness",   spell_cure_serious,      "cure blindness",    2000},
+    {HEALER_DISEASE,    "disease",     spell_cure_serious,      "cure serious",      1500},
+    {HEALER_POISON,     "poison",      spell_cure_serious,      "cure serious",      2500},
+    {HEALER_UNCURSE,    "uncurse",     spell_cure_serious,      "cure serious",      5000},
+    {HEALER_REFRESH,    "refresh",     spell_refresh,           "refresh",            500},
+    {HEALER_MANA,       "mana",        spell_cure_serious,      "cure serious",      1500},
+
     {0}
 };
